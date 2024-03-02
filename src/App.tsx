@@ -2,7 +2,6 @@ import { useState } from 'react'
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
   Link,
 } from "react-router-dom";
 import reactLogo from './assets/react.svg'
