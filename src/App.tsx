@@ -1,9 +1,15 @@
 import { useState } from 'react'
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  Link,
+} from "react-router-dom";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-function App() {
+const Counter = () => {
   const [count, setCount] = useState(0)
 
   return (
@@ -31,5 +37,26 @@ function App() {
     </>
   )
 }
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: (
+      <div>
+        <h1>Hello World</h1>
+        <Link to="about">About Us</Link>
+      </div>
+    ),
+  },
+  {
+    path: "counter",
+    element: <Counter/>,
+  },
+]);
+
+function App() {
+  return <RouterProvider router={router}/>
+}
+
 
 export default App
